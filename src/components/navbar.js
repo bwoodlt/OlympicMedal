@@ -1,6 +1,8 @@
 import React from "react";
 import { Navbar, Nav, NavItem } from "react-bootstrap";
-import logo from "../assets/logo.png";
+
+const logo =
+  "https://uploads.codesandbox.io/uploads/user/1c0c3aec-ebfd-4fdb-b8ce-2bdd98b823e2/nh8H-logo.png";
 
 const navBar = () => {
   return (
