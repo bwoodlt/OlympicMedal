@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "react-dom";
 import { Navbar, TopSection, TableView } from "./components";
-import { generateData, handleSorting } from "./utils";
+import { generateData } from "./utils";
 
 const styles = {
   fontFamily: "sans-serif",

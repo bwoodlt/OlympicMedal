@@ -1,9 +1,7 @@
 import React from "react";
 import _ from "lodash";
 import Faker from "faker";
-import Flag from "react-flags";
-
-const basePath = "";
+import Flag from "react-country-flag";
 
 /**
  * For generating some test data
@@ -23,10 +21,13 @@ const generateData = noOfItems => {
   return result;
 };
 
+/**
+ * For showing country flags
+ */
 const FlagComponent = (cell, row) => {
   return (
     <div>
-      <Flag name={cell} format="png" pngSize={64} shinny />
+      <Flag code={cell} />
     </div>
   );
 };

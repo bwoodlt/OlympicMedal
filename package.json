@@ -12,8 +12,8 @@
     "react": "16.3.2",
     "react-bootstrap": "0.32.1",
     "react-bootstrap-table": "4.3.1",
+    "react-country-flag": "0.2.0",
     "react-dom": "16.3.2",
-    "react-flags": "0.1.13",
     "react-scripts": "1.1.4"
   },
   "devDependencies": {},

@@ -1,15 +1,17 @@
 import React from "react";
 import { Navbar, Nav, NavItem } from "react-bootstrap";
-
-const logo =
-  "https://uploads.codesandbox.io/uploads/user/1c0c3aec-ebfd-4fdb-b8ce-2bdd98b823e2/nh8H-logo.png";
+import logo from "../assets/logo.png";
 
 const navBar = () => {
   return (
     <Navbar inverse style={style.navBar}>
       <Navbar.Header>
         <Navbar.Brand>
-          <a href="https://www.drawgroup.com/create/" target="_blank">
+          <a
+            href="https://www.drawgroup.com/create/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img src={logo} alt="Draw Create" width="150" />
           </a>
         </Navbar.Brand>

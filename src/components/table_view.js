@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Button, Badge } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { TableHeaderColumn, BootstrapTable } from "react-bootstrap-table";
 import { FlagComponent } from "../utils";
 
@@ -28,14 +28,6 @@ class TableView extends React.Component {
       mode: "dbclick",
       blurToSave: true
     };
-  }
-
-  FlagComponent(cell, row) {
-    return (
-      <div>
-        <Flag name={cell} format="png" pngSize={64} shinny />
-      </div>
-    );
   }
 
   /**
@@ -83,7 +75,6 @@ class TableView extends React.Component {
               dataSort
               width="10%"
               dataFormat={FlagComponent}
-              // tdStyle={{ backgroundColor: "lightgreen" }}
             >
               Flag
             </TableHeaderColumn>
@@ -113,7 +104,7 @@ class TableView extends React.Component {
               Country
             </TableHeaderColumn>
             <TableHeaderColumn dataField="medalWon" dataSort dataAlign="center">
-              <Badge>Medal Won</Badge>
+              Medal Won
             </TableHeaderColumn>
           </BootstrapTable>
         </div>
