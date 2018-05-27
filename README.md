@@ -1,2 +1,0 @@
-# OlympicMedal
-Created with CodeSandbox
