@@ -11,7 +11,7 @@ const styles = {
 const title = "Olympic Medals Table";
 const tableTitle = "Olympic Medal Table";
 const description =
-  "For displaying the Olympic medal table including sorting by ASC and DESC order, adding new row and showing list of countries.";
+  "For displaying the Olympic medal table and associated data.";
 
 const App = () => {
   return (

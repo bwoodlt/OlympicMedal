@@ -33,6 +33,11 @@ const TopSection = ({ title, description }) => {
               <Glyphicon glyph="star" />
               &nbsp; Sort using either the sort button or the caret on headers.
             </p>
+
+            <p style={style.font}>
+              <Glyphicon glyph="star" />
+              &nbsp; Edit table by double clicking cell.
+            </p>
           </Alert>
         </div>
       </Grid>

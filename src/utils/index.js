@@ -25,11 +25,7 @@ const generateData = noOfItems => {
  * For showing country flags
  */
 const FlagComponent = (cell, row) => {
-  return (
-    <div>
-      <Flag code={cell} />
-    </div>
-  );
+  return <Flag code={cell} />;
 };
 
 export { generateData, FlagComponent };
