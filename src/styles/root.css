@@ -1,0 +1,7 @@
+:root {
+  --greyBg: --whiteBg
+}
+
+.app-main {
+  background-color: var(--whiteBg);
+}

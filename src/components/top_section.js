@@ -1,6 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Jumbotron, Grid, Glyphicon, Alert } from "react-bootstrap";
+import {
+  Jumbotron,
+  PageHeader,
+  Col,
+  Grid,
+  Glyphicon,
+  Alert
+} from "react-bootstrap";
 
 /**
  * For presenting the title and
@@ -11,34 +18,41 @@ const TopSection = ({ title, description }) => {
     <Jumbotron>
       <Grid>
         <div>
-          <h1>{title}</h1>
-          <p>{description}</p>
+          <PageHeader>
+            {title}
+            <br />
+            <small className="subItem">{description}</small>
+          </PageHeader>
           <br />
           <p>Features:</p>
-          <Alert style={style.feature}>
-            <p style={style.font}>
-              <Glyphicon glyph="star" />
-              &nbsp; Sort by ascending and descending order.
-            </p>
-            <p style={style.font}>
-              <Glyphicon glyph="star" />
-              &nbsp; Delete one or more items by selecting checkboxes and the
-              delete button.
-            </p>
-            <p style={style.font}>
-              <Glyphicon glyph="star" />
-              &nbsp; Add new item to list.
-            </p>
-            <p style={style.font}>
-              <Glyphicon glyph="star" />
-              &nbsp; Sort using either the sort button or the caret on headers.
-            </p>
-
-            <p style={style.font}>
-              <Glyphicon glyph="star" />
-              &nbsp; Edit table by double clicking cell.
-            </p>
-          </Alert>
+          <Col xs={12} md={6} mdPush={3}>
+            <Alert style={style.feature}>
+              <ul className="list-unstyled features">
+                <li>
+                  <Glyphicon glyph="check" />
+                  &nbsp; Routing
+                </li>
+                <li>
+                  {" "}
+                  <Glyphicon glyph="check" />
+                  &nbsp; Data manipulation.
+                </li>
+                <li>
+                  <Glyphicon glyph="check" />
+                  &nbsp; Search functionality
+                </li>
+                <li>
+                  <Glyphicon glyph="check" />
+                  &nbsp; Store navigation (when result item is clicked)
+                </li>
+                <li>
+                  <Glyphicon glyph="star" />
+                  &nbsp; High Contrast mode &nbsp;
+                  <span>(1 scenario not finalised)</span>
+                </li>
+              </ul>
+            </Alert>
+          </Col>
         </div>
       </Grid>
     </Jumbotron>
@@ -50,7 +64,7 @@ const style = {
     fontSize: 15
   },
   feature: {
-    display: "inline-flex"
+    display: "block"
   }
 };
 

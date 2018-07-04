@@ -1,0 +1,10 @@
+.flyout {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.navMain {
+    position: relative;
+    top: 20px;
+}
