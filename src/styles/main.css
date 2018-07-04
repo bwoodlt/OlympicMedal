@@ -1,0 +1,78 @@
+footer {
+    margin: 0;
+    padding: 0;
+    clear: both;
+}
+
+.clearfix {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+input,
+button {
+    margin-left: 15px;
+}
+
+form {
+    padding: 20px;
+    position: relative;
+}
+
+ul {
+    overflow: auto;
+}
+
+.mList,
+.openStatus,
+.sName,
+.oList {
+    border-top: 1px solid gray;
+}
+
+.dataRes {
+    padding-top: 20px;
+}
+
+.main-header {
+    padding: 10px
+}
+
+.orangeRed {
+    color: #ff6a00
+}
+
+.contrastMode {
+    margin-top: 20px;
+}
+
+.toggle {
+    padding: 20px;
+}
+
+.toggleItem {
+    padding: 20px
+}
+
+.react-toggle {
+    position: absolute;
+    top: 5px
+}
+
+.darkBg {
+    background-color: gray;
+}
+
+;
+.lightBg {
+    background: white;
+}
+
+.list-unstyled .features {
+    float: left;
+}
+
+.subItem {
+    font-size: 3vh !important;
+}
