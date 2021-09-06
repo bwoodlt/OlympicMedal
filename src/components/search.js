@@ -8,7 +8,7 @@ import { generateData } from "../utils";
  * @param {*}
  */
 const Search = () => {
-  const storeTitle = "Search for stores";
+  const storeTitle = "Search for Stores";
   const placeholder = "Search";
 
   return (

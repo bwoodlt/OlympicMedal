@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import PropTypes from "prop-types";
 import {
   Form,
@@ -24,8 +24,8 @@ const THEME = {
 };
 
 class StoreView extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       postcode: "",
       dataset: [],
@@ -55,10 +55,8 @@ class StoreView extends React.Component {
     e.preventDefault();
     const { dataset, postcode } = this.state;
 
-    const arrayObject = Object.values(StoreData);
-    const area = arrayObject[1];
-    const listing = arrayObject[2];
-    dataset.push(postcode, area, listing);
+    const [code, area, listing] = Object.values(StoreData);
+    dataset.push(code, area, listing);
 
     if (postcode.length >= 6 && postcode.length <= 8) {
       this.setState({ redirect: true });
@@ -82,7 +80,8 @@ class StoreView extends React.Component {
   setTheme(e) {
     const { mode, contrastMode } = this.state;
     this.setState({ mode: !e ? "light" : "dark" });
-    Object.keys(THEME[mode]).forEach(color => {
+
+    Object.keys(THEME[mode]).forEach((color) => {
       this.setState({ color: THEME[mode][color] });
       document.documentElement.style.setProperty(color, THEME[mode][color]);
     });
@@ -95,9 +94,11 @@ class StoreView extends React.Component {
   isValidated() {
     const { postcode } = this.state;
     const length = postcode.length;
-    if (length >= 6 && length <= 8) return "success";
-    else if (length > 5) return "warning";
-
+    if (length >= 6 && length <= 8) {
+      return "success";
+    } else if (length > 5) {
+      return "warning";
+    }
     return null;
   }
 
@@ -176,8 +177,8 @@ class StoreView extends React.Component {
                     postcode === "EC1N 2HT"
                       ? "Awesome, postcode looks good!"
                       : postcode.length > 3 || postcode.length >= 6
-                        ? "Please enter `EC1N 2HT` to see valid results."
-                        : ""}
+                      ? "Please enter `EC1N 2HT` to see valid results."
+                      : ""}
                   </HelpBlock>
                 </FormGroup>
               </Form>

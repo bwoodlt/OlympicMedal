@@ -1,17 +1,18 @@
-import React from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import { Grid, Row, Col } from "react-bootstrap";
+import { Grid, Row, Col, Alert, Badge } from "react-bootstrap";
+import { getPostCodeAddressInfo } from "../utils";
 
 /**
  * For reading and presenting store
  * data to user.
  * @param {*} location
  */
-const resultSet = location => {
+const resultSet = (storeListing) => {
   return (
     <div>
-      {location.state.results[2].map((data, index) => {
+      {storeListing.map((data, index) => {
         const {
           store_name,
           store_type,
@@ -35,7 +36,7 @@ const resultSet = location => {
               <Col xs={12} md={3} className="text-left sName">
                 <ul className="list-unstyled parent-list">
                   <li>
-                    <a href={url} target="_blank">
+                    <a href={url} rel="noreferrer" target="_blank">
                       <strong>{store_name}</strong>
                     </a>
                     <br />
@@ -103,18 +104,40 @@ const noResult = () => {
   );
 };
 
-const Store = ({ location }) => {
-  const validPostcode = location.state.results[0] === "EC1N 2HT";
+const Store = ({ location: { state } }) => {
+  const results = useMemo(() => (state && state.results) || [], [state]);
+
+  console.log({ results });
+  const validPostcode = results[1] === "EC1N 2HT";
+
+  const [postcodeData, setPostcodeData] = useState();
+  const [total, postcode, storeData] = results;
+
+  useEffect(() => {
+    (async () => {
+      const { result } = await getPostCodeAddressInfo(results[1]);
+
+      setPostcodeData(result);
+    })();
+  }, [results]);
+
   return (
     <Grid>
       <Row>
         <Col xs={12} sm={12}>
-          <h4 className="main-header">
-            {validPostcode ? location.state.results[2].length : 0} Result for{" "}
-            {location.state.results[0]}
-          </h4>
+          <Col className="main-header">
+            {validPostcode ? (
+              <Alert variant="success" dismissible>
+                <p>
+                  <Badge bg="success">{total}</Badge> Results for {postcode}
+                </p>
+              </Alert>
+            ) : (
+              <Alert variant="danger">No result returned for {postcode}</Alert>
+            )}
+          </Col>
           <Grid className="child-base">
-            {validPostcode ? resultSet(location) : noResult()}
+            {validPostcode ? resultSet(storeData) : noResult()}
           </Grid>
         </Col>
       </Row>
@@ -127,7 +150,7 @@ const Store = ({ location }) => {
  * presented to user.
  * @param {*} data
  */
-const formatOpeningHours = data => {
+const formatOpeningHours = (data) => {
   let result = [];
   for (let key of Object.keys(data)) {
     result.push(
