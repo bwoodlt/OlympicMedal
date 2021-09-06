@@ -5,7 +5,7 @@ const Footer = () => {
     <section>
       <hr />
       <footer>
-        <p>© Sainsburys Digital 2018</p>
+        <p>© Sainsburys Digital 2021</p>
       </footer>
     </section>
   );

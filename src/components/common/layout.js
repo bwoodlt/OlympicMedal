@@ -6,7 +6,7 @@ import "../../styles/main.css";
 /**
  * A basic layout showing different
  * components
- * @param {*} param0
+ * @param {*} param
  */
 const Layout = ({ children, location }) => (
   <div>

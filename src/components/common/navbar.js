@@ -9,7 +9,7 @@ const logo = "https://preview.ibb.co/duBvMd/logo.png";
 const Header = ({ location }) => {
   return (
     <div>
-      <Navbar style={style.navBar}>
+      <Navbar collapseOnSelect style={style.navBar}>
         <Navbar.Header>
           <Navbar.Brand className="navMain">
             <a href="/" rel="noopener noreferrer">
