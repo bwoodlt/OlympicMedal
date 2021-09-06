@@ -10,9 +10,11 @@ To run application, `yarn start` or `npm start`
 
 To run test, `yarn test`
 
-### P.S
+### What Does It Do?
 
-- Basic Store Locator App, using postcode to find nearby stores.
+A basic Store Locator App, using postcode to find nearby stores.
+
+- Generate store payload
 - Routing to different endpoints
 - Validations and postcode validators
 - Search functionality
