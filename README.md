@@ -12,8 +12,8 @@ To run test, `yarn test`
 
 ### P.S
 
-- I couldn't finish the persisting functionality as I ran out of time. Only had 2 hours or so to wrap up this evening.
-
-- I also didn't finish writing unit test for some of the components.
-
-* With a bit more time, work will be delivered tastefully
+- Basic Store Locator App, using postcode to find nearby stores.
+- Routing to different endpoints
+- Validations and postcode validators
+- Search functionality
+- Set contrast mode
